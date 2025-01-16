@@ -29,7 +29,8 @@
     "mongoose": "^4.13.19",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "worker-threads-pool": "^2.0.0"
+    "worker-threads-pool": "^2.0.0",
+    "async": "3.2.6"
   },
   "devDependencies": {
     "dtrace-provider": "^0.8.7",
