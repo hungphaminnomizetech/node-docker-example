@@ -11,7 +11,7 @@ const setupApp = async (githubResource = new Github()) => {
   app.use('/', routeSetup(githubResource));
 
   await database.connect();
-  console.log('cdcdcd');
+  console.log('cdcdcddfgsdgdsfg');
   return app;
 };
 const closeApp = async () => await database.close();
