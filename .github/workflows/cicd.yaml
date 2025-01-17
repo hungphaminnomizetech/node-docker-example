@@ -56,7 +56,7 @@ jobs:
       - name: Websentry Action
         uses: theritikchoure/websentry@main
         with:
-          website-url: 'https://24h.com.vn'  # Set the website URLs you want to check
+          website-url: 'https://strapi.dev.innomizetech.com/'  # Set the website URLs you want to check
           max-retries: '10'
           retry-interval: '5s'
           request-timeout: '10s'
