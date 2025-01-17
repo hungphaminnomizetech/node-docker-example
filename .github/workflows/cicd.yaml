@@ -53,11 +53,18 @@ jobs:
         with:
           go-version: '1.16'  # Use the Go version you needs
           
-      - name: Websentry Action
-        uses: theritikchoure/websentry@main
+      # - name: Websentry Action
+      #   uses: theritikchoure/websentry@main
+      #   with:
+      #     website-url: 'https://strapi.dev.innomizetech.com/'  # Set the website URLs you want to check
+      #     max-retries: '10'
+      #     retry-interval: '5s'
+      #     request-timeout: '10s'
+
+      - name: Ping Website (Fallback)
+        uses: monfresh/ping-url-action@v1
         with:
-          website-url: 'https://strapi.dev.innomizetech.com/'  # Set the website URLs you want to check
-          max-retries: '10'
-          retry-interval: '5s'
-          request-timeout: '10s'
+          url: 'https://24h.com.vn'
+          retries: 5
+          interval: 10
     
