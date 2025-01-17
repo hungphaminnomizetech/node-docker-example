@@ -1,0 +1,24 @@
+name: Website Health Check
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
+
+jobs:
+  website-health-check:
+    runs-on: ubuntu-latest
+    name: Website Health Check
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.16'  # Use the Go version you need
+      - name: Websentry Action
+        uses: theritikchoure/websentry@main
+        with:
+          website-url: '24h.vn'  # Set the website URLs you want to check
+          max-retries: '10'
+          retry-interval: '5s'
+          request-timeout: '10s'
