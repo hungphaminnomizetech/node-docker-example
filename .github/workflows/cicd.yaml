@@ -47,4 +47,17 @@ jobs:
             --cache-to=type=registry,ref=${{ secrets.DOCKER_USERNAME }}/huhunene:latest,mode=max \
             -t ${{ secrets.DOCKER_USERNAME }}/huhunene:latest \
             --push .
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.16'  # Use the Go version you need
+          
+      - name: Websentry Action
+        uses: theritikchoure/websentry@main
+        with:
+          website-url: '24h.com.vn'  # Set the website URLs you want to check
+          max-retries: '10'
+          retry-interval: '5s'
+          request-timeout: '10s'
     
